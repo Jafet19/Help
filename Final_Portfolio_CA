@@ -1,0 +1,55 @@
+from time import sleep
+import os
+import random
+import options
+
+print("""
+H       H   E E E E E   L           P P P P P
+H       H   E           L           P         P
+H       H   E           L           P         P
+H H H H H   E E E E     L           P P P P P 
+H       H   E           L           P 
+H       H   E           L           P    
+H       H   E E E E E   L L L L L   P
+""")
+print("Welcome to HELP:")
+print("A Guide to find an adventure!")
+
+#after showing main screen, terminal screen will clear
+sleep(3)
+os.system('clear')
+#clears terminal screen^^
+
+# after clear, it gives user up to 5 options to choose for 'ooting'
+ooting = ["Expensive", "Going out", "Staying in", "Affordable", "Planning required"]
+print("What are you in the mood for?")
+print(ooting)
+sleep(2)
+print("if you're not sure, type \'Im not sure' ")
+
+#user input has to be a string, after placememnt its stored into variable "answer" which leads on into elif statement for results
+answer = input()
+
+while True:
+        if answer == "Expensive" or "expensive":
+            print("Okay, searching..")
+            options.choices()
+            break
+        elif (answer == 'Going out' or "going out"):
+            print("give me one sec..")
+            break
+        elif (answer == 'Staying in' or 'staying in'):
+            print("Simple n' nice! Let me think..")
+            break
+        elif (answer == 'Affordable' or "affordable"):
+            print("searching..")
+            break
+        elif (answer == 'Planning required' or 'planning required'):
+            print("Go big or go home am i right, haha")
+            break
+        elif (answer == "Im not sure"):
+            # when not sure of option, it chooses a random string from the "ooting" list and prints it out for them
+            random_entry = random.choice(ooting)
+            print("trouble thinking of something? Let me help you.. I'll say\n " + random_entry)
+            break
+            
