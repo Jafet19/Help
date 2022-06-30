@@ -2,7 +2,7 @@ from time import sleep
 import os
 import random
 import options
-
+from options.expense import choices #import Variety of choices based on response
 print("""
 H       H   E E E E E   L           P P P P P
 H       H   E           L           P         P
@@ -33,22 +33,29 @@ answer = input()
 while True:
         if answer == "Expensive" or "expensive":
             print("Okay, searching..")
+            os.system('clear')
             options.choices()
+            # if options.choices() == "Wine Tasting":
+                # from options.expense import Wine_Tasting
             break
         elif (answer == 'Going out' or "going out"):
             print("give me one sec..")
+            os.system('clear')
             break
         elif (answer == 'Staying in' or 'staying in'):
             print("Simple n' nice! Let me think..")
+            os.system('clear')
             break
         elif (answer == 'Affordable' or "affordable"):
             print("searching..")
+            os.system('clear')
             break
         elif (answer == 'Planning required' or 'planning required'):
-            print("Go big or go home am i right, haha")
+            print("Go big or go home am i right!")
+            os.system('clear')
             break
         elif (answer == "Im not sure"):
-            # when not sure of option, it chooses a random string from the "ooting" list and prints it out for them
+            # when user not sure of option, it chooses a random string from the "ooting" list and prints it out for them
             random_entry = random.choice(ooting)
             print("trouble thinking of something? Let me help you.. I'll say\n " + random_entry)
             break
